@@ -1,0 +1,88 @@
+---
+title: Classification
+author: Seyi Dasho
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+**Classification**<br>
+Classification involves predicting a categorical label or class for new observations based on labeled training data.
+
+**Common Classification Algorithms** <br>
+o	**Logistic Regression:** Predicts class probabilities using a logistic function. Popular introductory algorithm.<br>
+o	**Decision Trees:** Makes predictions by branching left or right based on feature values. Interpretable but prone to overfitting.<br>
+o	**K-Nearest Neighbors:** Classifies points based on proximity to labeled examples in feature space. Simple but sensitive to scaling.<br>
+o	**Support Vector Machines:** Finds an optimal hyperplane to separate classes. Powerful but requires tuning.<br>
+o	**Neural Networks:** Multi-layer neural net models learn complex class boundaries from features. Very flexible but act as "black boxes".
+
+**Key steps in classification include:**<br> 
+o	Preprocessing data and engineering informative features.<br> 
+o	Splitting data into train and test sets.<br> 
+o	Training a model on the training set.<br> 
+o	Evaluating model accuracy on the test set.<br> 
+o	Using cross-validation techniques to tune hyperparameters and reduce overfitting.<br> 
+o	Choosing evaluation metrics like accuracy, precision, recall, F1-score based on use case.
+
+```{python}
+import os
+import numpy as np
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.datasets import fetch_covtype
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+import warnings
+warnings.filterwarnings('ignore')
+
+covtype= fetch_covtype() 
+X, y = covtype.data, covtype.target
+
+# Split data into train and test
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Train, fit and predict logistic regression model
+lr = LogisticRegression(random_state=42)
+lr.fit(X_train, y_train)
+y_pred_lr = lr.predict(X_test)
+# Evaluate the classifiers
+accuracy_lr = accuracy_score(y_test, y_pred_lr)
+conf_matrix_lr = confusion_matrix(y_test, y_pred_lr)
+
+
+# Train, fit and predict Decision Tree model
+dt = DecisionTreeClassifier(random_state=42)
+dt.fit(X_train, y_train)
+y_pred_dt = dt.predict(X_test)
+# Evaluate the classifiers
+accuracy_dt = accuracy_score(y_test, y_pred_dt)
+conf_matrix_dt = confusion_matrix(y_test, y_pred_dt)
+
+print(f'Decision Tree Accuracy: {accuracy_dt:.2f}')
+print(f'Logistic Regression Accuracy: {accuracy_lr:.2f}')
+
+fig, axes = plt.subplots(1, 2, figsize=(15, 5))
+# Decision Tree Confusion Matrix
+sns.heatmap(conf_matrix_dt, annot=True, fmt='g', cmap='Reds', xticklabels=covtype.target_names, yticklabels=covtype.target_names, ax=axes[0])
+axes[0].set_title('Decision Tree Confusion Matrix')
+axes[0].set_xlabel('Predicted')
+axes[0].set_ylabel('True')
+
+# Random Forest Confusion Matrix
+sns.heatmap(conf_matrix_lr, annot=True, fmt='g', cmap='Reds', xticklabels=covtype.target_names, yticklabels=covtype.target_names, ax=axes[1])
+axes[1].set_title('Logistic Regression Accuracy Matrix')
+axes[1].set_xlabel('Predicted')
+axes[1].set_ylabel('True')
+
+plt.show()
+```
+
+•	This loads the dataset, splits the data into train and test sets, trains a Logistic Regression and a Decision tree models, makes predictions on the test set, and calculates the accuracy.<br>
+•	This shows a basic machine learning workflow for classification in Python - loading data, training a model, making predictions and evaluating performance. The steps can be adapted for other algorithms and datasets.
+
+

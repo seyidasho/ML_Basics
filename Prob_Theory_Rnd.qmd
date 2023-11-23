@@ -1,0 +1,70 @@
+---
+title: Probability Theory and Random Variable
+author: Seyi Dasho
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+**Probability Theory**<br>
+Probability theory provides the mathematical framework for modeling uncertainty and randomness. It allows us to calculate probabilities, make predictions, and quantify the likelihood of different outcomes.
+
+**Random Variables**<br>
+Random variables are key components of probability theory. A random variable represents an outcome that has some randomness or uncertainty associated with it. For example, the weather on a given day can be modeled as a random variable.
+
+**Application in Machine Learning**<br>
+Many machine learning algorithms rely on probability and statistics to model the uncertainty in the data. For example, Naive Bayes classifiers use Bayes' theorem to calculate probabilities and make predictions. Regression models estimate probabilities for the relationship between variables.<br>
+When training machine learning models, we draw random samples from the full dataset. This introduces randomness into the learning process, helping avoid overfitting and making the models more robust.<br>
+Key probability distributions used in machine learning include the Gaussian (normal) distribution for modeling continuous variables, the Bernoulli distribution for binary variables, and the Categorical distribution for multi-class outcomes.<br>
+Overall, probability and random variables are essential for developing machine learning models that can handle noise, variability, and uncertainty in real-world data. They provide the mathematical language for "teaching" machines from random example
+
+**Example using Bernoulli Distribution**
+
+```{python}
+#| tags: []
+# Import numpy for numerical operations
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define a Bernoulli distribution 
+p = 0.3
+dist = np.random.binomial(1, p, size=10000)
+
+# Draw some random samples
+samples = dist
+
+# Calculate mean and standard deviation
+mean = np.mean(samples) 
+std = np.std(samples)
+
+# Plot a histogram
+plt.hist(samples, bins=10)
+plt.title("Bernoulli Distribution")
+plt.show()
+```
+
+**Example using Gaussian Distribution**
+
+```{python}
+#| tags: []
+# Define a Gaussian distribution
+mu = 0
+sigma = 1
+dist = np.random.normal(mu, sigma, size=10000) 
+
+# Draw random samples 
+samples = dist
+
+# Calculate statistics
+mean = np.mean(samples)
+std = np.std(samples)
+
+# Plot histogram
+plt.hist(samples, bins=20)
+plt.title("Gaussian Distribution")
+
+plt.show()
+```
+
+

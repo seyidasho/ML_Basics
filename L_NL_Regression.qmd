@@ -1,0 +1,106 @@
+---
+title: Linear and Non-linear Regression
+author: Seyi Dasho
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+**Linear and Nonlinear Regression** <br>
+Here is an overview of linear and nonlinear regression in machine learning:<br>
+
+**Linear Regression:** <br>
+- Models the relationship between dependent and independent variables as a linear function. <br>
+- Takes the form: y = mx + b <br>
+- Simple and fast to implement, good exploratory technique. <br>
+- Prone to underfitting and cannot capture nonlinear patterns. <br>
+- Examples: Simple, multiple, polynomial regression. <br>
+
+**Nonlinear Regression:** 
+- Models the relationship between variables as a nonlinear function. More flexible and can fit complex patterns.<br>
+- Examples include polynomial, logistic, exponential functions. <br>
+- Takes more computational power and data to fit properly. <br>
+- Examples: Polynomial regression, support vector regression. <br>
+
+- Kernel trick can make linear regression algorithms fit nonlinear patterns. Maps data to higher dimensions.<br>
+- Regularization helps prevent overfitting for both linear and nonlinear models. Penalizes model complexity.<br>
+- Model evaluation metrics like R-squared, MSE help assess fit. Cross-validation reduces overfitting.<br>
+- Feature engineering creates meaningful nonlinear transformations of data for modeling.<br>
+Overall, linear models provide a fast and simple approach, while nonlinear models can capture more complex relationships but require more data and computing power to train effectively. The choice depends on the specific dataset and use case.
+
+```{python}
+#| tags: []
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Load the diabetes dataset
+diabetes = load_diabetes()
+X, y = diabetes.data, diabetes.target
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create a linear regression model
+model = LinearRegression()
+
+# Train the model
+model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+# Print the evaluation metrics
+print(f'Mean Squared Error: {mse:.2f}')
+print(f'R-squared: {r2:.2f}')
+
+# Plot the predicted vs. actual values
+plt.scatter(y_test, y_pred)
+plt.xlabel('Actual Values')
+plt.ylabel('Predicted Values')
+plt.title('Linear Regression: Actual vs. Predicted Values')
+plt.show()
+```
+
+```{python}
+#| tags: []
+from sklearn.preprocessing import PolynomialFeatures
+
+# Apply Polynomial Regression
+degree = 2  # Adjust the degree as needed
+poly_features = PolynomialFeatures(degree=degree)
+X_poly_train = poly_features.fit_transform(X_train)
+X_poly_test = poly_features.transform(X_test)
+
+model = LinearRegression()
+model.fit(X_poly_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_poly_test)
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+# Print the evaluation metrics
+print(f'Mean Squared Error: {mse:.2f}')
+print(f'R-squared: {r2:.2f}')
+
+# Plot the results
+sorted_indices = X_test.argsort(axis=0).flatten()    
+plt.scatter(y_test, y_pred, color='red', label='Predicted Data (Polynomial Regression)')
+plt.xlabel('Feature')
+plt.ylabel('Target')
+plt.legend()
+plt.show()
+```
+
+
