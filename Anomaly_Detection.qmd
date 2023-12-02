@@ -1,6 +1,6 @@
 ---
-title: Anomaly Detection
-author: Seyi Dasho
+title: "Anomaly Detection"
+author: "Seyi Dasho"
 format:
   html:
     code-fold: true

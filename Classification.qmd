@@ -1,6 +1,6 @@
 ---
-title: Classification
-author: Seyi Dasho
+title: "Classification"
+author: "Seyi Dasho"
 format:
   html:
     code-fold: true

@@ -1,6 +1,6 @@
 ---
-title: Linear and Non-linear Regression
-author: Seyi Dasho
+title: "Linear and Non-linear Regression"
+author: "Seyi Dasho"
 format:
   html:
     code-fold: true

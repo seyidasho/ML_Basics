@@ -2,12 +2,29 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "ML_Basics"
+  title: "Machine Learning Basics"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: clustering.qmd
+        text: Clustering
+      - Classification.qmd
+      - href: Prob_Theory_Rnd.qmd
+        text: Probability Theory and Random Vairables
+      - L_NL_Regression.qmd
+      - Anomaly_Detection.qmd
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+        - Prob_Theory_Rnd.qmd
+        - clustering.qmd
+        - L_NL_Regression.qmd
+        - Classification.qmd
+        - Anomaly_Detection.qmd
+      
 
 format:
   html:

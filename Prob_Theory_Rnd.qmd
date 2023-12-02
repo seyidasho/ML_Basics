@@ -1,6 +1,6 @@
 ---
-title: Probability Theory and Random Variable
-author: Seyi Dasho
+title: "Probability Theory and Random Variable"
+author: "Seyi Dasho"
 format:
   html:
     code-fold: true

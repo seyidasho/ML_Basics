@@ -1,7 +1,6 @@
 ---
-title: Clustering
-author: Seyi Dasho
-date: 'November 21st, 2023'
+title: "Clustering"
+author: "Seyi Dasho"
 format:
   html:
     code-fold: true
