@@ -7,7 +7,7 @@ editor: visual
 jupyter: python3
 ---
 
-## Introduction to Machine Learning:
+**Introduction to Machine Learning:**
 
 Machine learning is a branch of artificial intelligence that focuses on developing algorithms and models that enable computers to learn and make predictions or decisions without being explicitly programmed. The field encompasses a diverse set of techniques that allow systems to automatically improve their performance on a specific task through experience or data.
 
