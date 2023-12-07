@@ -2,8 +2,9 @@
 title: "Introduction"
 author: "Seyi Dasho"
 date: December 6 2023
-format: html
-editor: visual
+format:
+  html:
+    code-fold: true
 jupyter: python3
 ---
 
