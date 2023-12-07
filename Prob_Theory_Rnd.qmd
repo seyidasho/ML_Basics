@@ -1,6 +1,7 @@
 ---
 title: "Probability Theory and Random Variable"
 author: "Seyi Dasho"
+date: December 6 2023
 format:
   html:
     code-fold: true
@@ -9,10 +10,12 @@ jupyter: python3
 
 **Probability Theory**<br>
 Probability theory provides the mathematical framework for modeling uncertainty and randomness. It allows us to calculate probabilities, make predictions, and quantify the likelihood of different outcomes.
+$$\displaystyle \operatorname P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}$$
 
 **Random Variables**<br>
-Random variables are key components of probability theory. A random variable represents an outcome that has some randomness or uncertainty associated with it. For example, the weather on a given day can be modeled as a random variable.
-
+Random variables are key components of probability theory. A random variable represents an outcome that has some randomness or uncertainty associated with it. For example, the weather on a given day can be modeled as a random variable.<br>
+The probability that random variable **X** takes on a value in a measurable set S ⊆ E  is written as 
+$${\displaystyle \operatorname {P} (X\in S)=\operatorname {P} (\{\omega \in \Omega \mid X(\omega )\in S\})}$$
 **Application in Machine Learning**<br>
 Many machine learning algorithms rely on probability and statistics to model the uncertainty in the data. For example, Naive Bayes classifiers use Bayes' theorem to calculate probabilities and make predictions. Regression models estimate probabilities for the relationship between variables.<br>
 When training machine learning models, we draw random samples from the full dataset. This introduces randomness into the learning process, helping avoid overfitting and making the models more robust.<br>
@@ -26,7 +29,7 @@ Overall, probability and random variables are essential for developing machine l
 # Import numpy for numerical operations
 import numpy as np
 import matplotlib.pyplot as plt
-
+import seaborn as sns
 # Define a Bernoulli distribution 
 p = 0.3
 dist = np.random.binomial(1, p, size=10000)
@@ -60,11 +63,11 @@ samples = dist
 mean = np.mean(samples)
 std = np.std(samples)
 
-# Plot histogram
-plt.hist(samples, bins=20)
-plt.title("Gaussian Distribution")
-
+# Plot histogram and probablity distribution function
+fig, ax = plt.subplots(1,2, figsize=(16,6))
+sns.histplot(samples, bins=20, ax=ax[0])
+sns.kdeplot(samples, ax=ax[1])
+ax[0].set_xlabel('Histogram')
+ax[1].set_xlabel('PDF')
 plt.show()
 ```
-
-

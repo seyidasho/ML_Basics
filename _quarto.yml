@@ -2,35 +2,38 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "Machine Learning Basics"
+  title: "ML"
   navbar:
+    background: primary
+    search: true
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - href: clustering.qmd
-        text: Clustering
-      - Classification.qmd
-      - href: Prob_Theory_Rnd.qmd
-        text: Probability Theory and Random Vairables
-      - L_NL_Regression.qmd
-      - Anomaly_Detection.qmd
+      - href: about.qmd
+        text: About
+    tools:
+      - icon: twitter
+        href: https://twitter.com/seyidasho/
+      - icon: linkedin
+        href: www.linkedin.com/in/seyidasho/
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://github.com/seyidasho/ML_Basics
   sidebar:
-    style: "docked"
-    search: true
+    style: docked
     contents:
-        - Prob_Theory_Rnd.qmd
-        - clustering.qmd
-        - L_NL_Regression.qmd
-        - Classification.qmd
-        - Anomaly_Detection.qmd
-      
-
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-
+      - section: "Fundamentals"
+        contents:
+          - href: intro.qmd
+      - section: "Topics"
+        contents:
+          - href: Prob_Theory_Rnd.qmd
+          - href: clustering.qmd
+          - href: L_NL_Regression.qmd
+          - href: Classification.qmd
+          - href: Anomaly_Detection.qmd
+  back-to-top-navigation: true    
+  page-footer: "Copyright 2023, Oluwaseyi Dasho"
 
 

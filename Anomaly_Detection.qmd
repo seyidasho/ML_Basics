@@ -1,6 +1,7 @@
 ---
 title: "Anomaly Detection"
 author: "Seyi Dasho"
+date: December 6 2023
 format:
   html:
     code-fold: true
@@ -8,14 +9,15 @@ jupyter: python3
 ---
 
 **Anomaly/outlier detection**<br>
-•	Anomaly detection refers to identifying rare items, events or observations that are significantly different from the majority of the data. These outliers or anomalies may be indicative of some issue or abnormal behavior.<br>
-•	Goal is to detect anomalies with high accuracy while minimizing false positives.<br>
-•	Applications include fraud detection, network intrusion, breakdown detection in manufacturing, etc.<br>
+i.	Anomaly detection refers to identifying rare items, events or observations that are significantly different from the majority of the data. These outliers or anomalies may be indicative of some issue or abnormal behavior.<br>
+ii.	Goal is to detect anomalies with high accuracy while minimizing false positives.<br>
+iii.	Applications include fraud detection, network intrusion, breakdown detection in manufacturing, etc.<br>
 **Common approaches:** <br>
-o	Statistical methods: Declare points outliers if they are far from mean/median or in the tails of a distribution.<br>
-o	Distance-based: Find points with low nearest neighbor density as outliers.<br>
-o	Classification-based: Train binary classifiers to distinguish between normal and outlier classes.<br>
-o	Clustering: Identify small clusters or points far from clusters as anomalous.<br>
+i.	Statistical methods: Declare points outliers if they are far from mean/median or in the tails of a distribution.<br>
+ii.	Distance-based: Find points with low nearest neighbor density as outliers.<br>
+iii.	Classification-based: Train binary classifiers to distinguish between normal and outlier classes.<br>
+iv.	Clustering: Identify small clusters or points far from clusters as anomalous.<br>
+
 •	Unsupervised methods like statistical metrics, isolation forests and local outlier factor do not require labeled data.<br>
 •	Supervised models like SVM, neural networks can be trained if labeled examples of anomalies exist.<br>
 •	Key challenges are class imbalance (far more normal points than anomalies), obtaining labels, and defining anomalies for complex data.<br>

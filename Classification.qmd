@@ -1,6 +1,7 @@
 ---
 title: "Classification"
 author: "Seyi Dasho"
+date: December 6 2023
 format:
   html:
     code-fold: true
@@ -11,19 +12,19 @@ jupyter: python3
 Classification involves predicting a categorical label or class for new observations based on labeled training data.
 
 **Common Classification Algorithms** <br>
-o	**Logistic Regression:** Predicts class probabilities using a logistic function. Popular introductory algorithm.<br>
-o	**Decision Trees:** Makes predictions by branching left or right based on feature values. Interpretable but prone to overfitting.<br>
-o	**K-Nearest Neighbors:** Classifies points based on proximity to labeled examples in feature space. Simple but sensitive to scaling.<br>
-o	**Support Vector Machines:** Finds an optimal hyperplane to separate classes. Powerful but requires tuning.<br>
-o	**Neural Networks:** Multi-layer neural net models learn complex class boundaries from features. Very flexible but act as "black boxes".
+i.	**Logistic Regression:** Predicts class probabilities using a logistic function. Popular introductory algorithm.<br>
+ii.	**Decision Trees:** Makes predictions by branching left or right based on feature values. Interpretable but prone to overfitting.<br>
+iii.	**K-Nearest Neighbors:** Classifies points based on proximity to labeled examples in feature space. Simple but sensitive to scaling.<br>
+iv.	**Support Vector Machines:** Finds an optimal hyperplane to separate classes. Powerful but requires tuning.<br>
+v.	**Neural Networks:** Multi-layer neural net models learn complex class boundaries from features. Very flexible but act as "black boxes".
 
 **Key steps in classification include:**<br> 
-o	Preprocessing data and engineering informative features.<br> 
-o	Splitting data into train and test sets.<br> 
-o	Training a model on the training set.<br> 
-o	Evaluating model accuracy on the test set.<br> 
-o	Using cross-validation techniques to tune hyperparameters and reduce overfitting.<br> 
-o	Choosing evaluation metrics like accuracy, precision, recall, F1-score based on use case.
+i.	Preprocessing data and engineering informative features.<br> 
+ii.	Splitting data into train and test sets.<br> 
+iii.	Training a model on the training set.<br> 
+iv.	Evaluating model accuracy on the test set.<br> 
+v.	Using cross-validation techniques to tune hyperparameters and reduce overfitting.<br> 
+vi.	Choosing evaluation metrics like accuracy, precision, recall, F1-score based on use case.
 
 ```{python}
 import os

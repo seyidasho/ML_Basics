@@ -1,9 +1,9 @@
 {
-  "hash": "bb2b3dea823a5469f53739477ae665ec",
+  "hash": "0895b52cb8b7b1302abb5d9a8ac3f48b",
   "result": {
-    "markdown": "---\ntitle: ML_Basics\n---\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\n2\n```\n:::\n:::\n\n\n",
+    "markdown": "---\ntitle: Machine Learning Basics\n---\n\nThe blog discusses the basics of machine learning.\n\n",
     "supporting": [
-      "index_files"
+      "index_files\\figure-html"
     ],
     "filters": [],
     "includes": {}

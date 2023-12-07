@@ -1,9 +1,9 @@
 {
-  "hash": "774bb98825779ba5884422ea2ac0431b",
+  "hash": "8c831c31f8880dffb11943800d170b7e",
   "result": {
-    "markdown": "---\ntitle: About\n---\n\nAbout this site\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\n2\n```\n:::\n:::\n\n\n",
+    "markdown": "---\ntitle: About\n---\n\nI am Oluwaseyi Dasho, a researcher in the field of Geosciences, I are currently pursuing a PhD and working as a research assistant at Virginia Tech. My specific focus lies in investigating the implications of land subsidence on relative sea level rise and coastal flooding. My work involves delving into the complex interplay between geological processes and their impact on coastal environments.\n\n",
     "supporting": [
-      "about_files"
+      "about_files\\figure-html"
     ],
     "filters": [],
     "includes": {}

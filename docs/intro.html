@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Seyi Dasho">
-<meta name="dcterms.date" content="2023-12-06">
 
-<title>ML - Anomaly Detection</title>
+<title>ML - Introduction</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -147,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Prob_Theory_Rnd.html">Topics</a></li><li class="breadcrumb-item"><a href="./Anomaly_Detection.html">Anomaly Detection</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Fundamental</a></li><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -162,7 +127,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Fundamentals</span></a>
+ <span class="menu-text">Fundamental</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -170,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -211,7 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Anomaly_Detection.html" class="sidebar-item-text sidebar-link active">
+  <a href="./Anomaly_Detection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anomaly Detection</span></a>
   </div>
 </li>
@@ -228,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Anomaly Detection</h1>
+<h1 class="title">Introduction</h1>
 </div>
 
 
@@ -242,12 +207,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">December 6, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -255,112 +214,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p><strong>Anomaly/outlier detection</strong><br> i. Anomaly detection refers to identifying rare items, events or observations that are significantly different from the majority of the data. These outliers or anomalies may be indicative of some issue or abnormal behavior.<br> ii. Goal is to detect anomalies with high accuracy while minimizing false positives.<br> iii. Applications include fraud detection, network intrusion, breakdown detection in manufacturing, etc.<br> <strong>Common approaches:</strong> <br> i. Statistical methods: Declare points outliers if they are far from mean/median or in the tails of a distribution.<br> ii. Distance-based: Find points with low nearest neighbor density as outliers.<br> iii. Classification-based: Train binary classifiers to distinguish between normal and outlier classes.<br> iv. Clustering: Identify small clusters or points far from clusters as anomalous.<br></p>
-<p>• Unsupervised methods like statistical metrics, isolation forests and local outlier factor do not require labeled data.<br> • Supervised models like SVM, neural networks can be trained if labeled examples of anomalies exist.<br> • Key challenges are class imbalance (far more normal points than anomalies), obtaining labels, and defining anomalies for complex data.<br> • Evaluation metrics include precision, recall, F1-score. Cross-validation helps avoid overfitting.<br> • Overall, anomaly detection is critical for identifying irregularities, errors, novelties and outliers that could indicate important events or issues.<br></p>
-<p><strong>Example using Local Outlier Factor</strong></p>
-<div class="cell" data-tags="[]" data-execution_count="1">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> LocalOutlierFactor</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate sample data</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> <span class="fl">0.3</span> <span class="op">*</span> np.random.randn(<span class="dv">100</span>, <span class="dv">2</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.r_[X <span class="op">+</span> <span class="dv">2</span>, X <span class="op">-</span> <span class="dv">2</span>]</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit LOF model</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> LocalOutlierFactor()</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> clf.fit_predict(X)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify outliers</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>outlier_idx <span class="op">=</span> np.where(y_pred <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[:,<span class="dv">0</span>], X[:,<span class="dv">1</span>], s<span class="op">=</span><span class="dv">50</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[outlier_idx,<span class="dv">0</span>], X[outlier_idx,<span class="dv">1</span>], color<span class="op">=</span><span class="st">'r'</span>, s<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Local Outlier Factor"</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img src="Anomaly_Detection_files/figure-html/cell-2-output-1.png" width="569" height="431"></p>
-</div>
-</div>
-<p>• This fits a LOF model to randomly generated sample data, makes predictions to identify outliers, and plots the outliers in red.<br> • LOF is an unsupervised anomaly detection method that works well with low dimensional data. The key steps - fit model, predict outliers, evaluate results - demonstrate the basic workflow for applying anomaly detection in Python.<br></p>
-<p><strong>Example using Isolation Forest</strong></p>
-<div class="cell" data-tags="[]" data-execution_count="2">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_wine</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> IsolationForest</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> precision_score, recall_score, f1_score</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the wine dataset from Scikit-learn</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>wine <span class="op">=</span> load_wine()</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> wine.data</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> wine.target</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add outliers to the dataset (for demonstration purposes)</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>outliers <span class="op">=</span> np.array([[<span class="dv">14</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">80</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1000</span>],  <span class="co"># Adding an outlier to the first sample</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                    [<span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">50</span>]])  <span class="co"># Adding an outlier to the second sample</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>X_with_outliers <span class="op">=</span> np.vstack([X, outliers])</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>y_with_outliers <span class="op">=</span> np.concatenate([y, [<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>]])  <span class="co"># Adding labels for outliers</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the Isolation Forest model</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> IsolationForest(contamination<span class="op">=</span><span class="fl">0.05</span>)  <span class="co"># Adjust the contamination parameter as needed</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>model.fit(X_with_outliers)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Predict anomalies</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>predictions <span class="op">=</span> model.predict(X_with_outliers)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>precision <span class="op">=</span> precision_score(y_with_outliers, predictions, pos_label<span class="op">=-</span><span class="dv">1</span>, average<span class="op">=</span><span class="st">'weighted'</span>)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>recall <span class="op">=</span> recall_score(y_with_outliers, predictions, pos_label<span class="op">=-</span><span class="dv">1</span>, average<span class="op">=</span><span class="st">'weighted'</span>)</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>f1 <span class="op">=</span> f1_score(y_with_outliers, predictions, pos_label<span class="op">=-</span><span class="dv">1</span>, average<span class="op">=</span><span class="st">'weighted'</span>)</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Precision: </span><span class="sc">{</span>precision<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Recall: </span><span class="sc">{</span>recall<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'F1 Score: </span><span class="sc">{</span>f1<span class="sc">:.2f}</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Precision: 0.16
-Recall: 0.38
-F1 Score: 0.22</code></pre>
-</div>
-</div>
-<div class="cell" data-tags="[]" data-execution_count="3">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the results</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot normal data points</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], c<span class="op">=</span><span class="st">'blue'</span>, label<span class="op">=</span><span class="st">'Normal Data'</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot outliers</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.scatter(outliers[:, <span class="dv">0</span>], outliers[:, <span class="dv">1</span>], c<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'Outliers'</span>, marker<span class="op">=</span><span class="st">'x'</span>, s<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Highlight predicted anomalies</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.scatter(X_with_outliers[predictions <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>], X_with_outliers[predictions <span class="op">==</span> <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>],</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            c<span class="op">=</span><span class="st">'yellow'</span>, label<span class="op">=</span><span class="st">'Predicted Anomalies'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Isolation Forest Anomaly Detection on Scikit-learn Wine Data (with Outliers)'</span>)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Feature 1'</span>)</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Feature 2'</span>)</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img src="Anomaly_Detection_files/figure-html/cell-4-output-1.png" width="811" height="523"></p>
-</div>
-</div>
+<section id="introduction-to-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-machine-learning">Introduction to Machine Learning:</h2>
+<p>Machine learning is a branch of artificial intelligence that focuses on developing algorithms and models that enable computers to learn and make predictions or decisions without being explicitly programmed. The field encompasses a diverse set of techniques that allow systems to automatically improve their performance on a specific task through experience or data.</p>
+<p>Key Concepts:</p>
+<ol type="1">
+<li><p><strong>Supervised Learning:</strong></p>
+<ul>
+<li><p>In supervised learning, the algorithm is trained on a labeled dataset, where the input data is paired with corresponding output labels.</p></li>
+<li><p>The goal is to learn a mapping function from inputs to outputs, allowing the algorithm to make predictions on new, unseen data.</p></li>
+</ul></li>
+<li><p><strong>Unsupervised Learning:</strong></p>
+<ul>
+<li><p>Unsupervised learning deals with unlabeled data, where the algorithm aims to discover hidden patterns or structures within the data.</p></li>
+<li><p>Clustering and dimensionality reduction are common tasks in unsupervised learning.</p></li>
+</ul></li>
+<li><p><strong>Types of Machine Learning Algorithms:</strong></p>
+<ul>
+<li><p><strong>Regression:</strong> Predicting a continuous output based on input features.</p></li>
+<li><p><strong>Classification:</strong> Assigning input data to predefined categories.</p></li>
+<li><p><strong>Clustering:</strong> Grouping similar data points together.</p></li>
+<li><p><strong>Dimensionality Reduction:</strong> Reducing the number of input features while preserving essential information.</p></li>
+</ul></li>
+<li><p><strong>Training and Testing:</strong></p>
+<ul>
+<li>Machine learning models are trained on a subset of the data, and their performance is evaluated on a separate set to assess generalization to new, unseen examples.</li>
+</ul></li>
+<li><p><strong>Feature Engineering:</strong></p>
+<ul>
+<li>Selecting and transforming relevant features in the input data to enhance model performance.</li>
+</ul></li>
+<li><p><strong>Overfitting and Underfitting:</strong></p>
+<ul>
+<li>Overfitting occurs when a model learns the training data too well, including its noise, leading to poor generalization. Underfitting happens when a model is too simplistic to capture the underlying patterns.</li>
+</ul></li>
+<li><p><strong>Evaluation Metrics:</strong></p>
+<ul>
+<li>The choice of metrics depends on the type of problem. Common metrics include accuracy, precision, recall, F1 score for classification, and mean squared error for regression.</li>
+</ul></li>
+<li><p><strong>Applications of Machine Learning:</strong></p>
+<ul>
+<li>Machine learning is widely used in various domains, including healthcare, finance, natural language processing, image and speech recognition, recommendation systems, and autonomous vehicles.</li>
+</ul></li>
+<li><p><strong>Deep Learning:</strong></p>
+<ul>
+<li>Deep learning is a subfield of machine learning that focuses on neural networks with multiple layers (deep neural networks). It has shown remarkable success in tasks such as image and speech recognition.</li>
+</ul></li>
+<li><p><strong>Ethical Considerations:</strong></p></li>
+</ol>
+<ul>
+<li>Machine learning raises ethical concerns related to bias in data, transparency, accountability, and the potential societal impact of automated decision-making.</li>
+</ul>
+<p>Machine learning is a dynamic and rapidly evolving field, with ongoing research and advancements continually expanding its applications and capabilities.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

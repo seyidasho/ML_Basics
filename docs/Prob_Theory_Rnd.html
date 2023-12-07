@@ -8,7 +8,7 @@
 
 <meta name="author" content="Seyi Dasho">
 
-<title>Machine Learning Basics - Probability Theory and Random Variable</title>
+<title>ML - Probability Theory and Random Variable</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -95,11 +95,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -107,7 +108,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Machine Learning Basics</span>
+    <span class="navbar-title">ML</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -124,28 +125,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./clustering.html" rel="" target="" aria-current="page">
- <span class="menu-text">Clustering</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Classification.html" rel="" target="">
- <span class="menu-text">Classification</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Prob_Theory_Rnd.html" rel="" target="">
- <span class="menu-text">Probability Theory and Random Vairables</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./L_NL_Regression.html" rel="" target="">
- <span class="menu-text">Linear and Non-linear Regression</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Anomaly_Detection.html" rel="" target="">
- <span class="menu-text">Anomaly Detection</span></a>
-  </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
+            <div class="quarto-navbar-tools ms-auto tools-wide">
+    <a href="https://twitter.com/seyidasho/" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
+    <a href="./www.linkedin.com/in/seyidasho/" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools ms-auto-item" href="https://github.com/seyidasho/ML_Basics">
+            Source Code
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -155,12 +148,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Prob_Theory_Rnd.html">Probability Theory and Random Variable</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Prob_Theory_Rnd.html">Topics</a></li><li class="breadcrumb-item"><a href="./Prob_Theory_Rnd.html">Probability Theory and Random Variable</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
     </div>
   </nav>
 </header>
@@ -168,51 +158,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Topics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Prob_Theory_Rnd.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Probability Theory and Random Variable</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./clustering.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Clustering</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./L_NL_Regression.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Linear and Non-linear Regression</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Classification.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Classification</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Anomaly_Detection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anomaly Detection</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -239,9 +233,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p><strong>Probability Theory</strong><br> Probability theory provides the mathematical framework for modeling uncertainty and randomness. It allows us to calculate probabilities, make predictions, and quantify the likelihood of different outcomes.</p>
-<p><strong>Random Variables</strong><br> Random variables are key components of probability theory. A random variable represents an outcome that has some randomness or uncertainty associated with it. For example, the weather on a given day can be modeled as a random variable.</p>
-<p><strong>Application in Machine Learning</strong><br> Many machine learning algorithms rely on probability and statistics to model the uncertainty in the data. For example, Naive Bayes classifiers use Bayes’ theorem to calculate probabilities and make predictions. Regression models estimate probabilities for the relationship between variables.<br> When training machine learning models, we draw random samples from the full dataset. This introduces randomness into the learning process, helping avoid overfitting and making the models more robust.<br> Key probability distributions used in machine learning include the Gaussian (normal) distribution for modeling continuous variables, the Bernoulli distribution for binary variables, and the Categorical distribution for multi-class outcomes.<br> Overall, probability and random variables are essential for developing machine learning models that can handle noise, variability, and uncertainty in real-world data. They provide the mathematical language for “teaching” machines from random example</p>
+<p><strong>Probability Theory</strong><br> Probability theory provides the mathematical framework for modeling uncertainty and randomness. It allows us to calculate probabilities, make predictions, and quantify the likelihood of different outcomes. <span class="math display">\[\displaystyle \operatorname P(A\vert B)={\frac {P(B\vert A)P(A)}{P(B)}}\]</span></p>
+<p><strong>Random Variables</strong><br> Random variables are key components of probability theory. A random variable represents an outcome that has some randomness or uncertainty associated with it. For example, the weather on a given day can be modeled as a random variable.<br> The probability that random variable <strong>X</strong> takes on a value in a measurable set S ⊆ E is written as <span class="math display">\[{\displaystyle \operatorname {P} (X\in S)=\operatorname {P} (\{\omega \in \Omega \mid X(\omega )\in S\})}\]</span> <strong>Application in Machine Learning</strong><br> Many machine learning algorithms rely on probability and statistics to model the uncertainty in the data. For example, Naive Bayes classifiers use Bayes’ theorem to calculate probabilities and make predictions. Regression models estimate probabilities for the relationship between variables.<br> When training machine learning models, we draw random samples from the full dataset. This introduces randomness into the learning process, helping avoid overfitting and making the models more robust.<br> Key probability distributions used in machine learning include the Gaussian (normal) distribution for modeling continuous variables, the Bernoulli distribution for binary variables, and the Categorical distribution for multi-class outcomes.<br> Overall, probability and random variables are essential for developing machine learning models that can handle noise, variability, and uncertainty in real-world data. They provide the mathematical language for “teaching” machines from random example</p>
 <p><strong>Example using Bernoulli Distribution</strong></p>
 <div class="cell" data-tags="[]" data-execution_count="1">
 <details>
@@ -249,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import numpy for numerical operations</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a Bernoulli distribution </span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> <span class="fl">0.3</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>dist <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, p, size<span class="op">=</span><span class="dv">10000</span>)</span>
@@ -286,20 +279,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> np.mean(samples)</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>std <span class="op">=</span> np.std(samples)</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot histogram</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.hist(samples, bins<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Gaussian Distribution"</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot histogram and probablity distribution function</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">16</span>,<span class="dv">6</span>))</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>sns.histplot(samples, bins<span class="op">=</span><span class="dv">20</span>, ax<span class="op">=</span>ax[<span class="dv">0</span>])</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>sns.kdeplot(samples, ax<span class="op">=</span>ax[<span class="dv">1</span>])</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].set_xlabel(<span class="st">'Histogram'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">1</span>].set_xlabel(<span class="st">'PDF'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="Prob_Theory_Rnd_files/figure-html/cell-3-output-1.png" width="583" height="431"></p>
+<p><img src="Prob_Theory_Rnd_files/figure-html/cell-3-output-1.png" width="1271" height="503"></p>
 </div>
 </div>
 
 
 
-</main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -534,6 +529,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Copyright 2023, Oluwaseyi Dasho</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
